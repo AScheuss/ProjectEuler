@@ -12,7 +12,10 @@ import java.util.Collections;
  */
 
 public class FourthPalindrome {
-	
+
+	/**
+	 * We calculate all products, check if the product is a palindrome and then get the highest number.
+	 */
 	public static void main(String[] args) {
 		testIsPalindrome();
 		
@@ -36,9 +39,7 @@ public class FourthPalindrome {
 			System.out.print("Error");
 	}
 
-	
-	
-	
+
 	
 	
 	public static boolean isPalindrome(Integer number) {

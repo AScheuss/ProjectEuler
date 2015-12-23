@@ -15,6 +15,11 @@ import main.Util;
  */
 
 public class ThirdPrimeFactors {
+
+	/**
+	 * We calculate all prime factors and then find the biggest.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		final long number = 600851475143L;
 		

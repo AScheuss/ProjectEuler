@@ -17,19 +17,24 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 
 
 public class SecondFibonacci {
+
+	/**
+	 * We calculate all the Fibonacci-Numbers and then add the even terms.
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		//small test:
-		ArrayList<Integer> fibonaccis = Util.getFibonaccis(100);
-		assert(fibonaccis.size() == 11);
 		
 		int sum = 0;
-		fibonaccis = Util.getFibonaccis(4000000);
+		long time = System.currentTimeMillis();
+		ArrayList<Integer> fibonaccis = Util.getFibonaccis(4000000);
 		for (Integer tempInteger: fibonaccis) {
 			if(tempInteger%2 == 0) {
 				sum = sum + tempInteger;
 			}
 		}
+		time = System.currentTimeMillis()-time;
 		System.out.println(sum);
+		System.out.println("Time needed: " + time + "ms");
 	}
 
 	

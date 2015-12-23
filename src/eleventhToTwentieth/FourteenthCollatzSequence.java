@@ -22,10 +22,19 @@ import java.util.Arrays;
  */
 public class FourteenthCollatzSequence {
 
+	/**
+	 * We can solve this question with brute force. We just have to count how long the steps are for the increasing sequence.
+	 *
+	 * However, we can improve this by caching the computed values and using this information when we reach those numbers again.
+	 *
+	 * Below both implementations are given.
+	 */
 	public static void main(String[] args) {
 		long start = System.currentTimeMillis();
 		new FourteenthCollatzSequence().bruteForce();
 		System.out.println("cost time : " + (System.currentTimeMillis() - start) + "ms.");
+
+		System.out.print(System.lineSeparator());
 
 		start = System.currentTimeMillis();
 		new FourteenthCollatzSequence().withMemorization();
@@ -43,7 +52,7 @@ public class FourteenthCollatzSequence {
 			int lengthOfChain = 0;
 
 			while (step!=1) {
-				step = computeStep(step);
+				step = computeCollatzStep(step);
 				lengthOfChain++;
 			}
 			if (lengthOfChain > lengthOfHighestChain) {
@@ -75,7 +84,7 @@ public class FourteenthCollatzSequence {
 			}
 		}
 
-		System.out.println("With brute force:");
+		System.out.println("With memorization:");
 		System.out.println("number with highest chain: " + numberWithHighestChain);
 		System.out.println("length of highest chain: " + lengthOfHighestChain);
 	}
@@ -85,7 +94,7 @@ public class FourteenthCollatzSequence {
 		int lengthOfChain=0;
 
 		while (step!=1) {
-			step = computeStep(step);
+			step = computeCollatzStep(step);
 			lengthOfChain++;
 
 			//use the cache
@@ -103,7 +112,7 @@ public class FourteenthCollatzSequence {
 		return lengthOfChain;
 	}
 
-	private long computeStep(long step) {
+	private long computeCollatzStep(long step) {
 		if (0 == step % 2) {
 			step = step / 2;
 		} else {
@@ -111,6 +120,5 @@ public class FourteenthCollatzSequence {
 		}
 		return step;
 	}
-
 
 }

@@ -40,7 +40,10 @@ What is the greatest product of four adjacent numbers in the same direction (up,
  */
 public class EleventhProductInAGrid {
 	private static int[][] matrix = new int[20][20];
-	
+
+	/**
+	 * Basically we just compute those products and compare them.
+	 */
 	public static void main(String[] args) {
 		//initalize the matrix:
 		construct();
@@ -95,13 +98,11 @@ public class EleventhProductInAGrid {
 	 * @return the product of the four 
 	 */
 		private static int computeDiagonalRightToLeft(int x, int y) {
-			int result=0;
 			ArrayList<Integer> array = new ArrayList<>();
 			for (int i= 0; i<4;i++) {
 				array.add(matrix[x+i][y-i]);
 			}
-			result = Util.multiplicateArray(array);
-			return result;
+			return Util.multiplicateArray(array);
 			
 		}
 

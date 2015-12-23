@@ -12,32 +12,21 @@ import main.Util;
  */
 public class FifthSmallesMultiple {
 
+	/**
+	 * We are locking for the least common multiple.
+	 *
+	 * We implemented the method in Util.java, as it will be handy in the future.
+	 */
 	public static void main(String[] args) {
-		int result = 0;
-		test();
-		test2();
-		
+
 		int[] array= new int[20];
 		for (int i=0;i<20;i++) {
 			array[i]=i+1;
 		}
-		
-		result = Util.getLCM(array);
+
+		int result = Util.getLCM(array);
+
 		System.out.print(result);
 		
 	}
-
-
-
-	private static void test() {
-		assert Util.getGCD(8,6) == 2;
-		assert Util.getLCM(8, 6) == 24;
-	}
-
-	private static void test2() {
-	    int[] data = {8,6,4,2};
-		assert Util.getGCD(data) == 2;
-		assert Util.getLCM(data) == 24;
-	}
-	
 }

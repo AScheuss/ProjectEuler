@@ -67,10 +67,10 @@ public final class Util {
 	 * This returns all the multiples of the baseNumber until the maxNumber.
 	 */
 	public static ArrayList<Integer> getAllMultiples(Integer baseNumber, Integer maxNumber) {
-		ArrayList<Integer> multiples= new ArrayList<Integer>();
+		ArrayList<Integer> multiples= new ArrayList<>();
 		Integer multiple=0;
 		Integer i=0;
-		while (multiple <maxNumber-(baseNumber-1)) {//minus the baseNumber because we will go trough the while-loop afterwards
+		while (multiple < maxNumber-(baseNumber)) {//minus the baseNumber because we will go trough the while-loop afterwards
 			multiple = baseNumber*++i;
 			multiples.add(multiple);
 		}
@@ -139,12 +139,20 @@ public final class Util {
 			else if (number==0)
 				System.out.print("ERROR: 0 ist keine Primzahl");
 			else {
-				int j=2;
+				if (number>2) {
+					primes.add(2);
+				}
+				if (number>3) {
+					primes.add(3);
+				}
+				int j=5;
+				int w=2;
 				while (j<=number) {
 					if(isPrime(j)) {
 						primes.add(j);
 					}
-					j++;
+					j+=w;
+					w=6-w;//only check the numbers of the form 6k +/- 1 (because the others are certainly no primes)
 				}
 			}
 			return primes;
@@ -173,7 +181,7 @@ public final class Util {
 
 	
 	public static double lb(double n) {
-		return Math.log1p(n)/Math.log1p(2);
+		return ((double)Math.log(n))/ Math.log(2);
 	}
 
 

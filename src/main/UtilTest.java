@@ -63,7 +63,7 @@ public class UtilTest {
 	}
 
 	@Test
-	public void testGetLCMIntArray() {// TODO
+	public void testGetLCMIntArray() {
 		int1 = 8;
 		int2 = 2;
 		simpleArray[0] = int1;
@@ -166,24 +166,24 @@ public class UtilTest {
 		arrayList.add(10);
 		arrayList.add(12);
 		arrayList.add(14);
-		arrayList.add(16);
-		
-		expectedList = arrayList;
+		// 16 is not counted because we are looking for the multiples BELOW 16
+
+		expectedList = new ArrayList<>(arrayList);
 		actualList = Util.getAllMultiples(int1, int2);
 		assertEquals(expectedList, actualList);
-		
+
 		int2 = 17;
 		assertEquals(expectedList, actualList);
-		int2 = 18;
-		arrayList.add(18);
-		
-		expectedList = arrayList;
+
+		expectedList.add(16);
 		actualList = Util.getAllMultiples(int1, int2);
 		assertEquals(expectedList, actualList);
 	}
 
 	@Test
 	public void testGetFibonaccis() {
+		assertEquals(Util.getFibonaccis(100).size(), 11);
+
 		int1 = 50;
 		
 		arrayList.add(1);
@@ -330,9 +330,28 @@ public class UtilTest {
 		assertEquals(6, Util.countDivisors(18));//1,2,3,6,9,18
 	}
 
-	public void lb() {
+	@Test
+	public void text_lb() {
 		double lb = Util.lb(64);
-		assertEquals(lb, 8, 1e-10);
+		assertEquals(lb, 6, 1e-10);
+
+		double power = 23.46;
+		double pow = Math.pow(2, power);
+		lb = Util.lb(pow);
+		assertEquals(lb, power, 1e-10);
+	}
+
+	@Test
+	public void test_GCDAndLCM_TwoNumbers() {
+		assert Util.getGCD(8, 6) == 2;
+		assert Util.getLCM(8, 6) == 24;
+	}
+
+	@Test
+	public void test_GCDAndLCM_SeveralNumbers() {
+		int[] data = {8,6,4,2};
+		assert Util.getGCD(data) == 2;
+		assert Util.getLCM(data) == 24;
 	}
 	
 }

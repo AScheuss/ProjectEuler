@@ -16,6 +16,10 @@ import main.Util;
  */
 public class TenthSumOfPrimes {
 
+	/**
+	 * We calculate the primes and add them up. Be careful of the overflow for int!
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		ArrayList<Integer> primes = Util.getAllPrimes(2000000);
 		long result =0;

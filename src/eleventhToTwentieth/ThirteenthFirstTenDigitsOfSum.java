@@ -111,7 +111,11 @@ import java.io.*;
  */
 public class ThirteenthFirstTenDigitsOfSum {
 
-
+	/**
+	* We only need to consider the numbers of some first numbers, because the sums for lower digits are not relevant for the first ten numbers.
+	*
+	* The 13 first will do.
+	*/
 	public static void main(String[] args) throws IOException {
 		FileReader reader = new FileReader(new File("src/eleventhToTwentieth/numbersFor13.txt"));
 		BufferedReader bufferedReader = new BufferedReader(reader);
