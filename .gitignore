@@ -1,8 +1,14 @@
+# IDE files
 .classpath
 .project
 Java/.idea/*
+*.iml
+*.prefs
+
+# Java
 Java/out/*
 bin/*
-*.iml
 *.jar
-*.prefs
+
+# Python
+__pycache__
