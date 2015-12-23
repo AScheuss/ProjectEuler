@@ -1,8 +1,8 @@
 .classpath
 .project
-.idea/*
+Java/.idea/*
+Java/out/*
 bin/*
 *.iml
 *.jar
 *.prefs
-
