@@ -33,8 +33,9 @@ def monteCarloIsPrime(n):
 
 def getAllPrimesBelow(n):
 	list = []
-	if (n>3):
+	if (n>2):
 		list.append(2)
+	if (n>3):
 		list.append(3)
 
 	i=5
