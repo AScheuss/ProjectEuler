@@ -13,4 +13,6 @@ bin/*
 # Python
 __pycache__
 
-*.cpp
+# C++
+# We just ignore all executables - not nice but working...
+pe-1
