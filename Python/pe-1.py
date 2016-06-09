@@ -49,3 +49,19 @@ print("With \"Algorithm\":")
 assert 23 == pe1_2(10)
 
 getResult(pe1_2,1000)
+
+
+##-------------------- And with another way to generate the multiples in the previous algorithm (using list comprehension)
+##--------------------
+
+def pe1_3(below):
+	multiples3 = sum([i for i in range(1,below) if i%3 == 0])
+	multiples5 = sum([i for i in range(1,below) if i%5 == 0])
+	multiples15 = sum([i for i in range(1,below) if i%15 == 0])
+	return multiples5 + multiples3 - multiples15
+
+
+print("With \"Algorithm\" and list comprehension:")
+assert 23 == pe1_3(10)
+
+getResult(pe1_3,1000)
